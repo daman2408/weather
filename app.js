@@ -112,6 +112,7 @@ var showCurrentWeather = function() {
           withCredentials: false
         },
         dataType: "jsonp",
+        crossDomain: true,
         success: handleWeather
       });
 
@@ -123,6 +124,7 @@ var showCurrentWeather = function() {
           withCredentials: false
         },
         dataType: "jsonp",
+        crossDomain: true,
         success: handleForecast
       });
 
@@ -134,6 +136,7 @@ var showCurrentWeather = function() {
           withCredentials: false
         },
         dataType: "jsonp",
+        crossDomain: true,
         success: displayWeeklyForecast
       });
 
