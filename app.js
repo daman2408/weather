@@ -105,20 +105,35 @@ var showCurrentWeather = function() {
 
 
       $.ajax({
+        type: 'GET',
         url: weather,
-        datatype: "jsonp",
+        contentType: 'text/plain',
+        xhrFields: {
+          withCredentials: false
+        },
+        dataType: "jsonp",
         success: handleWeather
       });
 
       $.ajax({
+        type: 'GET',
         url: threeHourForecast,
-        datatype: "jsonp",
+        contentType: 'text/plain',
+        xhrFields: {
+          withCredentials: false
+        },
+        dataType: "jsonp",
         success: handleForecast
       });
 
       $.ajax({
+        type: 'GET',
         url: sevenDayForecast,
-        datatype: "jsonp",
+        contentType: 'text/plain',
+        xhrFields: {
+          withCredentials: false
+        },
+        dataType: "jsonp",
         success: displayWeeklyForecast
       });
 
