@@ -101,46 +101,49 @@ var showCurrentWeather = function() {
           4.
 
         */
-      }
+      };
 
 
       $.ajax({
-        type: 'GET',
+        method: 'GET',
         url: weather,
         contentType: 'text/plain',
         xhrFields: {
           withCredentials: false
         },
-        dataType: "jsonp",
+        dataType: "",
+        async: true,
         crossDomain: true,
         success: handleWeather
       });
 
       $.ajax({
-        type: 'GET',
+        method: 'GET',
         url: threeHourForecast,
         contentType: 'text/plain',
         xhrFields: {
           withCredentials: false
         },
-        dataType: "jsonp",
+        dataType: "",
+        async: true,
         crossDomain: true,
         success: handleForecast
       });
 
       $.ajax({
-        type: 'GET',
+        method: 'GET',
         url: sevenDayForecast,
         contentType: 'text/plain',
         xhrFields: {
           withCredentials: false
         },
-        dataType: "jsonp",
+        dataType: "",
+        async: true,
         crossDomain: true,
         success: displayWeeklyForecast
       });
 
-}
+};
 
   function error() {
     console.log('Sorry, there was an error.');
@@ -149,6 +152,5 @@ var showCurrentWeather = function() {
   navigator.geolocation.getCurrentPosition(success, error);
 
 }();
-
 
 document.body.addEventListener("load", showCurrentWeather);
