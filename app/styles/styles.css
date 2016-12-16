@@ -1,3 +1,51 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
+  width: 100%;
   text-align: center;
+}
+
+.initialPage {
+  height: 100%;
+  width: 100%;
+}
+
+.cityContainer {
+  position: relative;
+  top: 45px;
+}
+
+#currentTemperature {
+  font-size: 7.5em;
+}
+
+.currentWeather {
+  position: relative;
+  top: 25%;
+}
+
+.container-fluid {
+  background: rgb(127, 86, 163);
+  border: 2px solid rgb(121, 221, 143);
+}
+
+.container {
+  background: rgb(121, 221, 143);
+  border: 2px solid rgb(127, 86, 163);
+}
+
+.row {
+  background: rgb(214, 91, 102);
+  border: 2px solid rgb(205, 143, 23);
+}
+
+.hourly {
+  text-align: center;
+  position: relative;
+  top: 7px;
+  padding: 0 10px 0 10px;
+  margin-bottom: 100px;
 }

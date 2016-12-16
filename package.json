@@ -12,7 +12,9 @@
   "author": "daman mangat",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.0.0-alpha.5",
+    "browser-sync": "^2.18.5",
+    "gulp": "^3.9.1",
     "jquery": "^3.1.0"
   }
 }
