@@ -5,10 +5,12 @@ $.ajax({
   method: "GET",
   success: function(data) {
     console.log(data);
-
+    var cityName = data.current_observation.display_location.city;
     var currentTemperature = data.current_observation.temp_c;
     var feelsLike = data.current_observation.feelslike_c;
     var weatherCondition = data.current_observation.weather;
+
+    $('#city').text(cityName)
     $('#currentTemperature').text(Math.round(data.current_observation.temp_c) + '°C');
     $('#feels-like').text('Feels like ' +  feelsLike + '°C');
     $('#current-weather-condition').text(weatherCondition)
