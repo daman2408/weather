@@ -1,11 +1,3 @@
-if ("geolocation" in navigator) {
-  navigator.geolocation.getCurrentPosition(function(position) {
-    console.log(position.coords.latitude);
-  })
-} else {
-  console.log('location not available');
-}
-
 
 //get current weather conditions
 $.ajax({
