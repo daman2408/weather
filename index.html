@@ -13,7 +13,7 @@
 
 <body>
 
-    <div class="initialPage">
+    <div class="wrap-div">
         <div class="container-fluid cityContainer">
             <div class="offset-xs-2 col-xs-8" style="text-align: center">
                 <div class="nameOfCity">
@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <div class="container currentWeather">
+        <div class="container spaceOutDiv" id="currentWeather">
             <div class="col-xs">
                 <h1 id="currentTemperature"></h1>
             </div>
@@ -34,23 +34,91 @@
 
     </div>
 
+    <div class="wrap-div" id="hourly-div">
+      <div class="container-fluid">
+          <h1>Hourly Forecast</h1>
+      </div>
 
-    <div class="container-fluid">
-        <h1>Hourly Forecast</h1>
+      <div class="container spaceOutDiv">
+        <div>
+            <div class="card-deck">
+                <div class="card">
+                    <div class="card-block">
+                      <h4 class="card-title" id="hour1"></h4>
+                    </div>
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap-div" id="36hours">
+      <div class="container-fluid">
+          <h1>36 Hours</h1>
+      </div>
+
+      <div class="container spaceOutDiv">
+        <div>
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="..." alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">Card title</h4>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
 
 
 
 
-    <div class="container-fluid">
-        <h1>36 Hours</h1>
-    </div>
 
 
 
     <!-- Scripts -->
     <script src="docs/node_modules/jquery/dist/jquery.min.js"></script>
-    <!-- <script src="docs/node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="docs/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="app/scripts/app.js"></script>
 
 </body>

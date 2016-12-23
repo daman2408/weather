@@ -16,7 +16,7 @@ $.ajax({
 });
 
 
-//get the forecast
+//get the daily forecast
 $.ajax({
   url:"https://api.wunderground.com/api/a496a438d6e77ae4/forecast/q/autoip.json",
   method: 'GET',
@@ -25,12 +25,27 @@ $.ajax({
   }
 });
 
-//get local information
+//get the hourly forecast
 $.ajax({
-  url:"https://api.wunderground.com/api/a496a438d6e77ae4/geolookup/q/autoip.json",
+  url:"https://api.wunderground.com/api/a496a438d6e77ae4/hourly/q/autoip.json",
   method: 'GET',
   success: function(data) {
-    var city = data.location.nearby_weather_stations.pws.station[0].neighborhood;
     console.log(data);
+    var hour1_temp = data.hourly_forecast[0].temp.metric + '°C';
+    var hour1_time = data.hourly_forecast[0].FCTTIME.civil;
+    var hour2_temp = data.hourly_forecast[1].temp.metric + '°C';
+    var hour3_temp = data.hourly_forecast[2].temp.metric + '°C';
+
+    $('#hour1').text(hour1_time);
   }
 });
+
+//get local information
+// $.ajax({
+//   url:"https://api.wunderground.com/api/a496a438d6e77ae4/geolookup/q/autoip.json",
+//   method: 'GET',
+//   success: function(data) {
+//     var city = data.location.nearby_weather_stations.pws.station[0].neighborhood;
+//     console.log(data);
+//   }
+// });

@@ -8,7 +8,7 @@ body {
   text-align: center;
 }
 
-.initialPage {
+.wrap-div {
   height: 100%;
   width: 100%;
 }
@@ -22,7 +22,7 @@ body {
   font-size: 7.5em;
 }
 
-.currentWeather {
+.spaceOutDiv {
   position: relative;
   top: 25%;
 }
@@ -40,13 +40,4 @@ body {
 .row {
   background: rgb(214, 91, 102);
   border: 2px solid rgb(205, 143, 23);
-}
-
-#hourly {
-  font-size: 2em;
-  text-align: center;
-  position: relative;
-  top: 7px;
-  padding: 0 10px 0 10px;
-  margin-bottom: 100px;
 }
