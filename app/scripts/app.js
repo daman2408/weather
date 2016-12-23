@@ -10,10 +10,10 @@ $.ajax({
     var feelsLike = data.current_observation.feelslike_c;
     var weatherCondition = data.current_observation.weather;
 
-    $('#city').text(cityName)
     $('#currentTemperature').text(Math.round(data.current_observation.temp_c) + '°C');
     $('#feels-like').text('Feels like ' +  feelsLike + '°C');
-    $('#current-weather-condition').text(weatherCondition)
+    $('#current-weather-condition').text(weatherCondition);
+
   }
 });
 
@@ -39,6 +39,7 @@ $.ajax({
     var hour3_temp = data.hourly_forecast[2].temp.metric + '°C';
 
     $('#hour1').text(hour1_time);
+
   }
 });
 
@@ -48,6 +49,9 @@ $.ajax({
   method: 'GET',
   success: function(data) {
     var city = data.location.nearby_weather_stations.pws.station[0].neighborhood;
+
+    $('#city').text(city);
+
     console.log(data);
   }
 });
