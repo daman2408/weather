@@ -43,7 +43,7 @@ $.ajax({
   }
 });
 
-//get local information
+//get the location
 $.ajax({
   url:"https://api.wunderground.com/api/a496a438d6e77ae4/geolookup/q/autoip.json",
   method: 'GET',

@@ -24,7 +24,12 @@ body {
 
 .spaceOutDiv {
   position: relative;
-  top: 25%;
+  top: 19%;
+}
+
+.wrap-div-forecast {
+  height: 100%;
+  width: 100%;
 }
 
 .container-fluid {
@@ -40,4 +45,10 @@ body {
 .row {
   background: rgb(214, 91, 102);
   border: 2px solid rgb(205, 143, 23);
+}
+
+@media (max-width: 767px) {
+  .wrap-div-forecast {
+    height: auto;
+  }
 }
