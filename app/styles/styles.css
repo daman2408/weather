@@ -42,7 +42,8 @@ body {
   border: 2px solid rgb(205, 143, 23);
 }
 
-.hourly {
+#hourly {
+  font-size: 2em;
   text-align: center;
   position: relative;
   top: 7px;
