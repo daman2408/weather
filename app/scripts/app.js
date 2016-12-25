@@ -1,11 +1,14 @@
-//google api call gets the most accurate gps coordinates, wrap the other api calls with this so that the coordinates can be used inside of them
+//google api call gets the most accurate gps coordinates, wrap the other api calls inside this so that the coordinates can be used
 $.ajax({
   url:"https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDbfFdoar93pQWmiW2rDPptDsIbUg4xGZU",
   method: "POST",
+  considerIp: false,
   success: function(data) {
     var longitude = data.location.lng;
     var latitude = data.location.lat;
 
+
+/* MAKING CALLS TO WEATHER UNDERGROUND API */
     //get current weather conditions
     $.ajax({
       url:"https://api.wunderground.com/api/a496a438d6e77ae4/conditions/q/autoip.json",
