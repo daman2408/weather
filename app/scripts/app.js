@@ -53,11 +53,10 @@
           method: 'GET',
           success: function(data) {
             var city = data.location.city;
-
             $('#city').text(city);
 
             console.log(data);
           }
         });
 
-  })
+  });
