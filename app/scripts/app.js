@@ -22,7 +22,7 @@
         });
 
 
-        //get the daily forecast
+        //get the daily forecast. this will be used to generate the 36-hour forecast
         $.ajax({
           url:"https://api.wunderground.com/api/a496a438d6e77ae4/forecast/q/autoip.json",
           method: 'GET',
@@ -31,43 +31,39 @@
           }
         });
 
-
         //get the hourly forecast
         $.ajax({
           url:"https://api.wunderground.com/api/a496a438d6e77ae4/hourly/q/autoip.json",
           method: 'GET',
           success: function(data) {
-            // var hour1_temp = data.hourly_forecast[0].temp.metric + '°C';
-            // var hour1_time = data.hourly_forecast[0].FCTTIME.civil;
-            //
-            // var hour2_temp = data.hourly_forecast[1].temp.metric + '°C';
-            // var hour2_time = data.hourly_forecast[1].FCTTIME.civil;
-            //
-            // var hour3_temp = data.hourly_forecast[2].temp.metric + '°C';
-            // var hour3_time = data.hourly_forecast[2].FCTTIME.civil;
-            //
-            // $('#hour1').text(hour1_time);
-            // $('#hour1_temp').text(hour1_temp);
-            //
-            // $('#hour2').text(hour2_time);
-            // $('#hour2_temp').text(hour2_temp);
-            //
-            // $('#hour3').text(hour3_time);
-            // $('#hour3_temp').text(hour3_temp);
 
+            //display hourly forecast
             for (var i = 0; i < 3; i++) {
+              var doc = document.body;
               var hour_temp = data.hourly_forecast[i].temp.metric + '°C';
               var hour_time = data.hourly_forecast[i].FCTTIME.civil;
               var hour_conditions = data.hourly_forecast[i].condition;
               var feelsLike = 'Feels like ' + data.hourly_forecast[i].feelslike.metric + '°C';
 
-              document.body.getElementsByClassName('hourTime')[i].innerHTML = hour_time;
-              document.body.getElementsByClassName('hour_temp')[i].innerHTML = hour_temp;
-              document.body.getElementsByClassName('weather-condition')[i].innerHTML = hour_conditions;
-              document.body.getElementsByClassName('hourly-feels-like')[i].innerHTML = feelsLike;
+              doc.getElementsByClassName('hourTime')[i].innerHTML = hour_time;
+              doc.getElementsByClassName('hour_temp')[i].innerHTML = hour_temp;
+              doc.getElementsByClassName('weather-condition')[i].innerHTML = hour_conditions;
+              doc.getElementsByClassName('hourly-feels-like')[i].innerHTML = feelsLike;
+            };
+
+            //display 36 hour forecast
+            //loop through the data and pull only the 12, 24, and 36th hour data
+            var thirtySixHours = new Array();
+            for (var i = 11; i < data.hourly_forecast.length; i+=12) {
+              thirtySixHours.push(data.hourly_forecast[i]);
+            };
+
+            for (var i = 0; i < thirtySixHours.length; i++) {
+              doc.getElementsByClassName('thirtySixTimeOfDay')[i].innerHTML = thirtySixHours[i].FCTTIME.weekday_name_night;
+              doc.getElementsByClassName('thirtySixTemperature')[i].innerHTML = thirtySixHours[i].temp.metric + '°C';
             }
 
-            console.log(data);
+            console.log(thirtySixHours);
 
           }
         });
