@@ -37,6 +37,8 @@
           method: 'GET',
           success: function(data) {
 
+            console.log(data);
+
             //display hourly forecast
             for (var i = 0; i < 3; i++) {
               var doc = document.body;
@@ -44,7 +46,9 @@
               var hour_time = data.hourly_forecast[i].FCTTIME.civil;
               var hour_conditions = data.hourly_forecast[i].condition;
               var feelsLike = 'Feels like ' + data.hourly_forecast[i].feelslike.metric + '°C';
+              var hourly_weather_icon = data.hourly_forecast[i].icon_url;
 
+              doc.getElementsByClassName('hourly-weather-icon')[i].src = hourly_weather_icon;
               doc.getElementsByClassName('hourTime')[i].innerHTML = hour_time;
               doc.getElementsByClassName('hour_temp')[i].innerHTML = hour_temp;
               doc.getElementsByClassName('weather-condition')[i].innerHTML = hour_conditions;
@@ -54,13 +58,27 @@
             //display 36 hour forecast
             //loop through the data and pull only the 12, 24, and 36th hour data
             var thirtySixHours = new Array();
+
             for (var i = 11; i < data.hourly_forecast.length; i+=12) {
               thirtySixHours.push(data.hourly_forecast[i]);
             };
-
+            //loop through the thirtySixHours array
             for (var i = 0; i < thirtySixHours.length; i++) {
-              doc.getElementsByClassName('thirtySixTimeOfDay')[i].innerHTML = thirtySixHours[i].FCTTIME.weekday_name_night;
+              //set the weather icon
+              doc.getElementsByClassName('thirtySix-weather-icon')[i].src = thirtySixHours[i].icon_url;
+
+              //set the time
+              doc.getElementsByClassName('thirtySixTimeOfDay')[i].innerHTML = thirtySixHours[i].FCTTIME.civil;
+
+              //set the temperature
               doc.getElementsByClassName('thirtySixTemperature')[i].innerHTML = thirtySixHours[i].temp.metric + '°C';
+
+              //set the weather condition
+              doc.getElementsByClassName('thirtySix-weather-condition')[i].innerHTML = thirtySixHours[i].condition;
+
+              //set the 'feels like' text
+              doc.getElementsByClassName('thirtySix-feels-like')[i].innerHTML = 'Feels like ' + thirtySixHours[i].feelslike.metric + '°C';
+
             }
 
             console.log(thirtySixHours);

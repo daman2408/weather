@@ -8,6 +8,11 @@ body {
   text-align: center;
 }
 
+.page-wrap {
+  height: 100%;
+  width: 100%;
+}
+
 .wrap-div {
   height: 100%;
   width: 100%;
@@ -29,10 +34,11 @@ body {
 
 .wrap-div-forecast {
   height: 100%;
-  width: 100%;
+  width: 85%;
+  margin: auto;
 }
 
-.container-fluid {
+/*.container-fluid {
   background: rgb(127, 86, 163);
   border: 2px solid rgb(121, 221, 143);
 }
@@ -45,6 +51,14 @@ body {
 .row {
   background: rgb(214, 91, 102);
   border: 2px solid rgb(205, 143, 23);
+}*/
+
+.title-div {
+  margin: 2px 0;
+}
+
+.weather-block {
+  padding-top: 0px;
 }
 
 @media (max-width: 767px) {
