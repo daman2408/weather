@@ -24,7 +24,7 @@
 
         //get the daily forecast. this will be used to generate the 36-hour forecast
         $.ajax({
-          url:"https://api.wunderground.com/api/a496a438d6e77ae4/forecast/" + lat + "," + lng +  ".json",
+          url:"https://api.wunderground.com/api/a496a438d6e77ae4/forecast/q/" + lat + "," + lng +  ".json",
           method: 'GET',
           success: function(data) {
             console.log(data);
@@ -74,7 +74,7 @@
             };
             // loop through the thirtySixHours array
             for (var i = 0; i < thirtySixHours.length; i++) {
-              // set the weather icon
+              // set the weather icon, request with https instead of http
               let unSafe_url = thirtySixHours[i].icon_url;
               let safe_url = unSafe_url.replace(/http/, 'https');
               doc.getElementsByClassName('thirtySix-weather-icon')[i].src = safe_url;
