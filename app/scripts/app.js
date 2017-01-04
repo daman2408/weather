@@ -5,6 +5,17 @@
     var lat = pos.coords.latitude;
     var lng = pos.coords.longitude;
     /* MAKING CALLS TO WEATHER UNDERGROUND API */
+
+    // get the location based on the browser's geolocation object
+    $.ajax({
+      url:"https://api.wunderground.com/api/a496a438d6e77ae4/geolookup/q/" + lat + "," + lng +  ".json",
+      method: 'GET',
+      success: function(data) {
+        var city = data.location.city;
+        $('#city').text(city);
+      }
+    });
+    
         //get current weather conditions
         $.ajax({
           url:"https://api.wunderground.com/api/a496a438d6e77ae4/conditions/q/" + lat + "," + lng +  ".json",
@@ -22,21 +33,6 @@
 
           }
         });
-
-        // $.ajax({
-        //   url:"https://api.wunderground.com/api/a496a438d6e77ae4/forecast/q/" + lat + "," + lng +  ".json",
-        //   method: 'GET',
-        //   success: function(data) {
-        //
-        //     for (var i = 0; i < 3; i++) {
-        //       var day_temp = data.
-        //     }
-        //
-        //
-        //
-        //     console.log(data);
-        //   }
-        // });
 
         //get the hourly forecast
         $.ajax({
@@ -83,8 +79,8 @@
               let safe_url = unSafe_url.replace(/http/, 'https');
               doc.getElementsByClassName('thirtySix-weather-icon')[i].src = safe_url;
 
-              // set the time
-              doc.getElementsByClassName('thirtySixTimeOfDay')[i].innerHTML = thirtySixHours[i].FCTTIME.civil;
+              // set the time of day, morning or evening
+              doc.getElementsByClassName('thirtySixTimeOfDay')[i].innerHTML = ((thirtySixHours[i].FCTTIME.civil).indexOf('AM') > -1) ? thirtySixHours[i].FCTTIME.weekday_name + ' Morning': thirtySixHours[i].FCTTIME.weekday_name + ' Evening';
 
               // set the temperature
               doc.getElementsByClassName('thirtySixTemperature')[i].innerHTML = thirtySixHours[i].temp.metric + celsius;
@@ -95,7 +91,7 @@
               // set the 'feels like' text
               doc.getElementsByClassName('thirtySix-feels-like')[i].innerHTML = 'Feels like ' + thirtySixHours[i].feelslike.metric + celsius;
 
-            }
+            };
           }
         });
 
@@ -125,16 +121,6 @@
               doc.getElementsByClassName('daily-weather-condition')[i].innerHTML = day_weather_condition;
 
             }
-          }
-        });
-
-        // get the location based on the browser's geolocation object
-        $.ajax({
-          url:"https://api.wunderground.com/api/a496a438d6e77ae4/geolookup/q/" + lat + "," + lng +  ".json",
-          method: 'GET',
-          success: function(data) {
-            var city = data.location.city;
-            $('#city').text(city);
           }
         });
 
