@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="docs/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="docs/node_modules/bootstrap/dist/css/bootstrap-flex.min.css">
+    <link rel="stylesheet" href="styles/styles.css" charset="utf-8">
+    <title>Weather App</title>
+</head>
+
+<body>
+
+<div class="page-wrap">
+  <div class="wrap-div">
+      <div class="container-fluid cityContainer">
+          <div class="offset-xs-2 col-xs-8" style="text-align: center">
+              <div class="nameOfCity">
+                  <h1 id="city"></h1>
+              </div>
+          </div>
+      </div>
+
+      <div class="container spaceOutDiv" id="currentWeather">
+          <div class="col-xs">
+              <h1 id="currentTemperature"></h1>
+          </div>
+          <div class="offset-xs-2 col-xs-8">
+              <p id="feels-like"></p>
+              <p id="current-weather-condition"></p>
+          </div>
+      </div>
+
+  </div>
+
+  <div class="wrap-div-forecast" id="hourly-div">
+    <div class="title-div container-fluid">
+        <h1>Hourly Forecast</h1>
+    </div>
+
+    <div class="container-fluid spaceOutDiv">
+      <div>
+          <div class="card-deck">
+              <div class="card">
+                  <div class="card-block">
+                    <h4 class="card-title hourTime"></h4>
+                  </div>
+                  <div class="card-block weather-block">
+                    <img class="hourly-weather-icon" />
+                      <h4 class="card-title hour_temp"></h4>
+                      <p class="card-text weather-condition"></p>
+                      <p class="card-text"><small class="text-muted hourly-feels-like"></small></p>
+                  </div>
+              </div>
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title hourTime"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                    <img class="hourly-weather-icon" />
+                      <h4 class="card-title hour_temp"></h4>
+                      <p class="card-text weather-condition"></p>
+                      <p class="card-text"><small class="text-muted hourly-feels-like"></small></p>
+                  </div>
+              </div>
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title hourTime"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                      <img class="hourly-weather-icon" />
+                      <h4 class="card-title hour_temp"></h4>
+                      <p class="card-text weather-condition"></p>
+                      <p class="card-text"><small class="text-muted hourly-feels-like"></small></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap-div-forecast" id="thirty-six-hours">
+    <div class="title-div container-fluid">
+        <h1>36 Hours</h1>
+    </div>
+
+    <div class="container-fluid spaceOutDiv">
+      <div>
+          <div class="card-deck">
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title thirtySixTimeOfDay"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                    <img class="thirtySix-weather-icon" />
+                      <h4 class="card-title thirtySixTemperature"></h4>
+                      <p class="card-text thirtySix-weather-condition"></p>
+                      <p class="card-text"><small class="text-muted thirtySix-feels-like"></small></p>
+                  </div>
+              </div>
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title thirtySixTimeOfDay"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                    <img class="thirtySix-weather-icon" />
+                      <h4 class="card-title thirtySixTemperature"></h4>
+                      <p class="card-text thirtySix-weather-condition"></p>
+                      <p class="card-text"><small class="text-muted thirtySix-feels-like"></small></p>
+                  </div>
+              </div>
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title thirtySixTimeOfDay"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                    <img class="thirtySix-weather-icon" />
+                      <h4 class="card-title thirtySixTemperature"></h4>
+                      <p class="card-text thirtySix-weather-condition"></p>
+                      <p class="card-text"><small class="text-muted thirtySix-feels-like"></small></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap-div-forecast" id="day-div">
+    <div class="title-div container-fluid">
+        <h1>Daily Forecast</h1>
+    </div>
+
+    <div class="container-fluid spaceOutDiv">
+      <div>
+          <div class="card-deck">
+              <div class="card">
+                  <div class="card-block">
+                    <h4 class="card-title day"></h4>
+                  </div>
+                  <div class="card-block weather-block">
+                    <img class="daily-weather-icon" />
+                      <h4 class="card-title daily_temp_high"></h4>
+                      <h4 class="card-title daily_temp_low"></h4>
+                      <p class="card-text daily-weather-condition"></p>
+                  </div>
+              </div>
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title day"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                    <img class="daily-weather-icon" />
+                    <h4 class="card-title daily_temp_high"></h4>
+                    <h4 class="card-title daily_temp_low"></h4>
+                    <p class="card-text daily-weather-condition"></p>
+                  </div>
+              </div>
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title day"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                      <img class="daily-weather-icon" />
+                      <h4 class="card-title daily_temp_high"></h4>
+                      <h4 class="card-title daily_temp_low"></h4>
+                      <p class="card-text daily-weather-condition"></p>
+                  </div>
+              </div>
+
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title day"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                      <img class="daily-weather-icon" />
+                      <h4 class="card-title daily_temp_high"></h4>
+                      <h4 class="card-title daily_temp_low"></h4>
+                      <p class="card-text daily-weather-condition"></p>
+                  </div>
+              </div>
+
+              <div class="card">
+                <div class="card-block">
+                  <h4 class="card-title day"></h4>
+                </div>
+                  <div class="card-block weather-block">
+                      <img class="daily-weather-icon" />
+                      <h4 class="card-title daily_temp_high"></h4>
+                      <h4 class="card-title daily_temp_low"></h4>
+                      <p class="card-text daily-weather-condition"></p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+    <!-- Scripts -->
+    <script src="docs/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="docs/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script async defer src="scripts/app.js"></script>
+
+</body>
+
+</html>
