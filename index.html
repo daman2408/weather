@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="docs/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="docs/node_modules/bootstrap/dist/css/bootstrap-flex.min.css">
-    <link rel="stylesheet" href="styles/styles.css" charset="utf-8">
+    <link rel="stylesheet" href="app/styles/styles.css" charset="utf-8">
     <title>Weather App</title>
 </head>
 
@@ -24,8 +24,18 @@
       </div>
 
       <div class="container spaceOutDiv" id="currentWeather">
+<!--
+#currentTemperature
+#feels-like
+#current-weather-condition
+#icon ==> data.current_observation.icon_url ==> http://icons.wxug.com/i/c/k/mostlycloudy.gif
+  -->
+
           <div class="col-xs">
-              <h1 id="currentTemperature"></h1>
+            <div class="icon">
+              <img id="home_icon" />
+            </div>
+              <span id="currentTemperature"></span>
           </div>
           <div class="offset-xs-2 col-xs-8">
               <p id="feels-like"></p>
@@ -208,7 +218,7 @@
     <!-- Scripts -->
     <script src="docs/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="docs/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script async defer src="scripts/app.js"></script>
+    <script async defer src="app/scripts/app.js"></script>
 
 </body>
 

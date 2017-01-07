@@ -1,7 +1,7 @@
 
   navigator.geolocation.getCurrentPosition(function(pos) {
     var doc = document.body;
-    var celsius = '°C';
+    var celsius = '<sup>°C</sup>';
     var lat = pos.coords.latitude;
     var lng = pos.coords.longitude;
     /* MAKING CALLS TO WEATHER UNDERGROUND API */
@@ -15,7 +15,7 @@
         $('#city').text(city);
       }
     });
-    
+
         //get current weather conditions
         $.ajax({
           url:"https://api.wunderground.com/api/a496a438d6e77ae4/conditions/q/" + lat + "," + lng +  ".json",
@@ -26,11 +26,14 @@
             var currentTemperature = data.current_observation.temp_c;
             var feelsLike = data.current_observation.feelslike_c;
             var weatherCondition = data.current_observation.weather;
+            var home_icon = (data.current_observation.icon_url).replace(/http/, 'https');
 
-            $('#currentTemperature').text(Math.round(data.current_observation.temp_c) + celsius);
-            $('#feels-like').text('Feels like ' +  feelsLike + celsius);
+            $('#home_icon').attr('src', home_icon);
+            $('#currentTemperature').html(Math.round(data.current_observation.temp_c) + celsius);
+            $('#feels-like').html('Feels like ' +  feelsLike);
             $('#current-weather-condition').text(weatherCondition);
 
+            console.log(data);
           }
         });
 
