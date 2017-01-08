@@ -24,7 +24,7 @@
 
             var cityName = data.current_observation.display_location.city;
             var currentTemperature = data.current_observation.temp_c;
-            var feelsLike = data.current_observation.feelslike_c;
+            var feelsLike = (data.current_observation.dewpoint_c).toString();
             var weatherCondition = data.current_observation.weather;
             var home_icon = (data.current_observation.icon_url).replace(/http/, 'https');
 

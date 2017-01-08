@@ -7,6 +7,9 @@ body {
   width: 100%;
   text-align: center;
   font-weight: 100;
+  color: white;
+  background-image: url('https://s2.twnmm.com/images/en_ca/backgrounds/unified/default.jpg');
+  background-size: cover;
 }
 
 .page-wrap {
@@ -20,8 +23,7 @@ body {
 }
 
 .cityContainer {
-  position: relative;
-  top: 45px;
+  padding: 15px 0;
 }
 
 #currentTemperature {
@@ -33,13 +35,18 @@ body {
   top: -2.5em;
 }
 
+#currentDetails {
+  position: relative;
+  top: -36px;
+}
+
 h1, h2, h3, h4 {
   font-weight: 300;
 }
 
 .spaceOutDiv {
   position: relative;
-  top: 19%;
+  top: 10%;
 }
 
 .wrap-div-forecast {
@@ -66,7 +73,7 @@ h1, h2, h3, h4 {
 .icon {
   position: absolute;
   right: 65%;
-  top: 18%;
+  top: 12%;
 }
 
 #home_icon {
@@ -79,7 +86,11 @@ h1, h2, h3, h4 {
 
 #feels-like {
   margin-bottom: 0;
-  color: #818a91;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.card {
+  background-color: rgba(0, 0, 0, 0.52);
 }
 
 .weather-block {
