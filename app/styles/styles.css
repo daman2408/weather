@@ -65,7 +65,8 @@ h1, h2, h3, h4 {
 
 .icon {
   position: absolute;
-  left: 15px;
+  right: 65%;
+  top: 18%;
 }
 
 #home_icon {
