@@ -9,7 +9,8 @@ body {
   font-weight: 100;
   color: white;
   background-image: url('https://s2.twnmm.com/images/en_ca/backgrounds/unified/default.jpg');
-  background-attachment: fixed;
+  overflow: auto;
+  background-size: cover;
 }
 
 .page-wrap {
